@@ -1,7 +1,7 @@
-Sample springmvc application for deploying onto AWS
+Deploying containers on AWS
 ---------------------------------------------------
 
-Instructions
+**Instructions**
 
 Step 1: Import the codebase to codecommit
 
