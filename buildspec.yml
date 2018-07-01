@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - mvn clean package -Dmaven.test.skip=true
+  build:
+    commands:
+      - docker build -t nithin .
+      - docker tag nithin:latest 459297701547.dkr.ecr.us-east-2.amazonaws.com/parallax-ecr:latest
+  post_build:
+    commands: 
+      - eval `aws ecr get-login   --region us-east-2      --no-include-email`
+      - docker push 459297701547.dkr.ecr.us-east-2.amazonaws.com/parallax-ecr:latest
